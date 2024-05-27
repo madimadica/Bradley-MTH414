@@ -1,0 +1,14 @@
+$\mcu(f(x+h)) = \mcu(e^{2\pi i h x}f(x))$
+\begin{proof}
+    Let $g(x) := f(x+h)$. Then
+    \begin{align*}
+        \mcu(f(x+h)) &= \hat{f}(x+h)\\
+        &= \hat{g}(x)\\
+        &= \int g(t) e^{-2\pi i xt} \dd t\\
+        &= \int f(t+h) e^{-2\pi i xt} \dd t\\
+        &= \int f(u) e^{-2\pi i x(u-h)} \dd u \tag{$u=t+h$}\\
+        &= e^{2\pi i x h} \int f(u) e^{-2\pi i x u } \dd u \\
+        &=  e^{2\pi i x h} \hat{f}(x)\\
+        &= \mcu(e^{2\pi i h x}f(x))
+    \end{align*}
+\end{proof}

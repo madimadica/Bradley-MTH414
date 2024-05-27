@@ -1,0 +1,22 @@
+Use the Fourier transform and the convolution theorem to solve the biharmonic heat equation:
+$$\begin{cases}
+    u_t = -\Delta^2 u & x \in \R, \; t>0\\
+    u(x,0) = f(x)
+\end{cases}
+$$
+
+\soln* 
+
+$\hat{u_t}(\gamma, t) = k (2\pi i \gamma)^4 \hat{u}(\gamma, t)$
+$$\frac{\hat{u}_t(\gamma, t)}{\hat{u}(\gamma, t)} = 16\pi^4 \gamma^4 \implies \hat{u}(\gamma,t) = C(\gamma)e^{-16\pi^4 \gamma^4 kt}$$
+
+\nl By the initial condition, $\hat{u}(\gamma, 0) = C(\gamma)e^{0} = C(\gamma) = \hat{f}(\gamma)$. Hence
+$$\hat{u}(\gamma, t) = e^{-16\pi^4 \gamma^4 kt}\hat{f}(\gamma)$$
+This is a product of Schwartz class functions, so we know inverses exist. 
+Let $k(x,t) = \mcu^{-1}(e^{-16\pi^4 \gamma^4 kt})$ then $$\mcu^{-1}\pars{\hat{\mcu}(x,t)} = \mcu^{-1}(\hat{k}(\gamma,t)\hat{f}(\gamma)) = k(x,t) \ast f(x)$$
+$$u(x,t) = \intreal k(x-y,t)f(y)\dd y$$
+We can compute $k$ further. In order to use a Gauss Kernel, we want $(-16\pi^4 \gamma^4 kt) = \pi(\zeta)^2\gamma^2$. Let $\zeta = (4\pi\gamma \sqrt{\pi kt})$ then 
+$$e^{-\pi (4 \pi \gamma \sqrt{\pi kt})^2 \gamma^2} = \hat{k}(\gamma,t).$$ 
+Therefore
+$$\mcu^{-1}\pars{\hat{k}(\gamma,t)} = G_{4 \pi \gamma \sqrt{\pi kt}}(x) = \over{4 \pi \gamma \sqrt{\pi kt}}\exp{\frac{-x^2}{16\pi^2 \gamma^2 kt}}.$$
+Finally $$u(x,t) = \intreal \over{4 \pi \gamma \sqrt{\pi kt}}\exp{\frac{-(x-y)^2}{16\pi^2 \gamma^2 kt}} f(y) \dd y$$

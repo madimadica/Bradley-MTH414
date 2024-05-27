@@ -1,0 +1,24 @@
+Suppose the $hL = 1$. Represent the function $f(x) = x$ as a series of eigenfunctions
+of the above Sturm-Liouville problem.
+
+\soln*
+
+\begin{align*}
+    c_0 &= \frac{3}{L^3} \intl x^2 \dd x \\
+    &= \frac{1}{L^3} \brac{x^3}_0^L \dd x \\
+    &= 1
+\end{align*}
+
+\begin{align*}
+    c_n &=
+    \frac{2\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \intl x \sinp{\frac{\beta_n x}{L}}\\
+    &= \frac{2\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \brac{ \frac{-Lx}{\beta_n} \cosp{\frac{\beta_n x}{L}} + \frac{L^2}{\beta_n^2} \sinp{\frac{\beta_n x}{L}}}_{x=0}^{x=L} \tag{MW-2}\\
+    &= \frac{2}{\beta_n - \cosp{\beta_n} \sinp{\beta_n}} \brac{ -x \cosp{\frac{\beta_n x}{L}} + \frac{L}{\beta_n} \sinp{\frac{\beta_n x}{L}}}_{x=0}^{x=L} \tag{MW-2}\\
+    &= \frac{2}{\beta_n - \cosp{\beta_n} \sinp{\beta_n}}  \brac{
+        -L\cosp{\beta_n}+ \frac{L}{\beta_n} \sinp{\beta_n}
+    }
+\end{align*}
+
+$$\widehat{f}(x) = x + \sumn{1}  \frac{2}{\beta_n - \cosp{\beta_n} \sinp{\beta_n}}  \brac{
+    -L\cosp{\beta_n}+ \frac{L}{\beta_n} \sinp{\beta_n}
+}\sinp{\frac{\beta_n x}{L}} $$

@@ -1,0 +1,78 @@
+Consider the IBVP $
+\begin{cases}
+    u_{tt}(x,t) = 100u_{xx}(x,t) & \text{if } x \in (0, \pi) \text{ and } t \in \R\\
+    u(0,t) = u(\pi,t) = 0 & \text{if } t \in [0,\infty)\\
+    u(x, 0) = x\pi - x^2 &\text{if } x \in [0,\pi]\\
+    u_t(x,0) = 0 &\text{if } x \in [0,\pi]\\
+\end{cases} $
+
+Give a physical interpretation to the initial conditions of this problem and then solve
+the IBVP.
+
+\soln* 
+It is a string of length $\pi$ fixed at its ends. There is no initial velocity (yet to be released) and an initial displacement of $f(x) = \pi x - x^2$. The string has a wavespeed of 10 units.
+
+\nnl Separating into $u(x,t) = X(x)T(t)$ then $u_{tt} = XT''$ and $u_{xx} = X''T$. Substituting into the PDE, $$-\lambda = \frac{T''}{T} = c^2 \frac{X''}{X}$$ yielding the ODEs
+$$c^2 X'' + \lambda X = 0 \qquad\text{and}\qquad T'' + \lambda T = 0 \qquad \text{with}\qquad X(0)=X(L)=0$$
+
+\nnl \textbf{Case $\lambda < 0$:}
+$X(x) = A\coshp{\rabsl x} + B \sinhp{\rabsl x} = 0$ implies $A = B = 0$, trivial solution. 
+
+\nnl \textbf{Case $\lambda = 0$:}
+$X(x) = A + Bx = 0$ at $X(0) = A = 0$ implies $A = 0$, so $X(x) = Bx$, but $X(L) = B \cdot L = 0$ implies $B = 0$. Trivial solution. 
+
+\nnl \textbf{Case $\lambda > 0$:}
+$X(x) = A\cosp{\rabsl x} + B \sinp{\rabsl x}$ at $X(0) = A = 0$ implies $A = 0$. So $X(x) =  B \sinp{\rabsl x}$. At $X(L) = B \sinp{\rabsl L} = 0$ implies $\rabsl L = n \pi$ and hence $\lambda_n = \pfrac{\np}{L}^2$. 
+Therefore the associated eigenfunction is 
+$$X_n(x) = \sinp{\npxl}.$$
+
+\nnl Solving the ODE in T,
+$$T(t) = A \cosp{\rabsl ct} + B \sinp{\rabsl ct}.$$
+
+Then
+$$u_n(x,t) = T(t) \sinp{\npxl} = \pars{ A \cosp{\rabsl ct} + B \sinp{\rabsl ct}} \sinp{\npxl}$$
+and 
+$$u(x,t) = \sumn{1} \pars{ a_n \cosp{\cunt} + b_n \sinp{\cunt}} \sinp{\npxl}.$$
+
+Where the initial conditions are in the coefficients,
+$$a_n =  \frac{2}{L} \intl f(x) \sinp{\npxl} \dd x \qquad \text{and} \qquad b_n = \frac{2}{\np c} \intl g(x) \sinp{\npxl} $$ 
+
+
+\nnl 
+Now to solve the specific problem, 
+
+\begin{align*}
+    a_n &=  \frac{2}{L} \intl f(x) \sinp{\npxl} \dd x \\
+    &=  \frac{2}{L} \int_{0}^{L} (\pi x - x^2) \sinp{\npxl} \dd x \\
+    &=  \frac{2}{L}  \pars{
+        \pi \pars{
+            \int_{0}^{L} x \sinp{\npxl} \dd x
+        } - \pars{
+            \int_{0}^{L}  x^2 \sinp{\npxl} \dd x
+        }
+    }\\
+    &= \frac{2 \pi}{L}  \pars{
+            \brac{ \frac{-Lx}{n \pi} \cosp{\npxl} + \frac{L^2}{n^2 \pi^2} \sinp{\npxl}}_{x=0}^{x=L}
+        } \tag {MW-2}\\ & \qquad  -\frac{2}{L}  \pars{ 
+            \brac{
+                \onp{-Lx^2} \cosp{\npxl} 
+                + \onps{2L^2x} \sinp{\npxl} + \onpc{2L^3} \cosp{\npxl}
+            }_{x=0}^{x=L}  
+    } \tag{MW-4}\\
+    &= \frac{-2 L \cosp{\np}}{n} + \pars{\frac{2L^2}{\np} - \frac{4L^2}{n^3 \pi^3} (\cosp{\np} + 1) }\\
+    &= \frac{2L^2 -2 \pi L \cosp{\np}}{\np} - \frac{4L^2}{n^3 \pi^3} (\cosp{\np} + 1)
+\end{align*}
+In this particular IC, $L = \pi$, so
+\begin{align*}
+    \frac{2L^2 -2 \pi L \cosp{\np}}{\np} - \frac{4L^2}{n^3 \pi^3} (\cosp{\np} + 1)
+    &= \frac{2 \pi^2 -2 \pi \cdot \pi \cosp{\np}}{\np} - \frac{4 \pi^2}{n^3 \pi^3} (\cosp{\np} + 1)\\
+    &= -\frac{4}{n^3 \pi} \pars{ \cos{\np} + 1 }
+\end{align*}
+
+
+\nnl Since $g(x) \equiv 0$, so too is $b_n$. So the specific solution is 
+
+\begin{align*}
+    u(x,t) &= \sumn{1} \pars{ a_n \cosp{\cunt}}\\
+    &= \sumn{1} \pars{ -\frac{4}{n^3 \pi} \pars{ \cos{\np} + 1 } \cosp{10n t}}
+\end{align*}

@@ -1,0 +1,94 @@
+Compute the cosine series expansion of $f(x)$.
+
+\soln* Goal: $\displaystyle \widehat{f}(x) = c_0 + \sumn1 c_n \cosp{\npxl}$. Here $L = 2$. 
+
+\begin{align*}
+    c_0 &= \over{L} \intl f(x) \dd{x}\\
+        &= \over{2} \int_0^2 f(x) \dd{x}\\
+        &= \over{2} \int_0^1 \over2 \dd{x} + \over{2} \int_1^2 2x \dd{x}\\
+        &= \frac74
+\end{align*}
+
+Next, 
+
+\begin{align*}
+    c_n &= \frac{2}{L} \intl f(x) \cosp{\npxl}\\ &= \int_0^2 f(x)  \cosp{\npxo2}\\
+    &=\underbrace{\over2 \int_0^1\cosp{\npxo2}}_{\ast}  +  \underbrace{2 \int_1^2 x  \cosp{\npxo2}}_{\ast\ast}
+\end{align*}
+$$\ast = \frac{1}{2} \cdot \frac{2}{n \pi} \brac{\sinp{\npxo2}}_{0}^1 =
+\frac{1}{n \pi}  \pars{\sinp{\frac{n \pi}{2}} - \sinp{0}} = \frac{1}{n \pi} \sinp{\frac{n \pi}{2}}$$
+
+\begin{align*}
+    ** &= 2 \int_1^2 x  \cosp{\npxo2}  \dd x\\
+    & \text{with }
+    u = x,\quad
+    \dd v = \cosp{\npxo{2}} \dd x, \quad
+    \dd u = \dd x,  \quad
+    v = \onp2 \sinp{\npxo2} \\
+    &= 2 \pars{\brac{uv}_1^2 - \int_1^2 v \dd{u}}\\
+    &= 2 \pars{
+        \brac{\onp{2x} \sinp{\npxo2}}_1^2 - \int_1^2 \onp2 \sinp{\npxo2} \dd{x}
+    }\\
+    % factor out 2/n*pi
+    &= \onp4 \pars{
+        \brac{x \sinp{\npxo2}}_1^2 - \int_1^2 \sinp{\npxo2} \dd{x}
+    }\\
+    % FTC rhs
+    &= \onp4 \pars{
+        \brac{x \sinp{\npxo2}}_1^2 + \brac{
+            \onp2 \cosp{\npxo2}
+        }_1^2
+    }\\
+    % combine lhs and rhs insides
+    &= \onp4 \pars{
+        \brac{x \sinp{\npxo2} + \onp2 \cosp{\npxo2}}_1^2
+    }\\
+    % evaluate lhs and rhs
+    &= \onp4 \pars{
+        \pars{
+            0 + \onp2 \cosp{\np}
+        } - \pars{
+            \sinp{\npo2} + \onp2 \cosp{\npo2}
+        }
+    }\\
+    % combine inside terms
+    &= \onp4 \pars{
+            \onp2 \cosp{\np} -
+            \sinp{\npo2} - \onp2 \cosp{\npo2}
+    }\\
+    % distribute LC and combine like terms in factors
+    &= \frac{8}{n^2 \pi^2} \pars{
+        \cosp{\np} - \cosp{\npo2}
+    } -
+    \onp4 \sinp{\npo2}
+    \\
+\end{align*}
+
+Therefore 
+\begin{align*}
+    c_n
+&= \ast + \ast\ast\\
+&= \frac{8}{n^2 \pi^2} \pars{
+        \cosp{\np} - \cosp{\npo2}
+    } - \onp3 \sinp{\npo2}\\
+    &= \begin{cases}
+        \frac{8}{n^2 \pi^2} 
+        \cosp{\np}
+     - \onp3 \sinp{\npo2} &  n \text{ odd}\\
+    \frac{8}{n^2 \pi^2} \pars{
+        \cosp{\np} - \cosp{\npo2}
+    } &  n \text{ even} 
+    \end{cases}
+\end{align*}
+
+Thus
+\begin{align*}
+    \widehat{f}(x) &= c_0 + \sumn1 c_n \cosp{\npxl} \\
+    &= \frac{7}{4} + \sumn{1} \brac{ \cosp{\npxl} 
+        \pars{
+            \frac{8}{n^2 \pi^2} \pars{
+                \cosp{\np} - \cosp{\npo2}
+            } - \onp3 \sinp{\npo2}
+        }
+    }
+\end{align*}

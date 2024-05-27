@@ -1,0 +1,27 @@
+(solution spaces)
+
+\nl Consider the second order linear homogeneous ODE of the form 
+$$y'' + P(x)y' + Q(x)y = 0$$
+where $P$ and $Q$ are defined on some interval $I$ in $\R$. Show that the set of all solutions to this ODE forms a vector space. That is, verify each of the following:
+
+\begin{enumerate}
+\item \input{question_7_a.tex}\vspace{0.25in}
+\item \input{question_7_b.tex}
+\end{enumerate}
+
+\vspace{.5in}
+In fact, you can show (you don't need to do this here, although it might be good to look up), that a vector space of all solutions to the above ODE has dimension 2 and a basis can be found by finding two linearly independent solutions on the interval $I$.
+
+
+\nnl
+\begin{align*}
+    \P{x > 10} &= 1 - \P{x \leq 10}\\
+    &= 1 - \sum_{k=0}^{10} \P{x = k} \\
+    &= 1 - \sum_{k=0}^{10} {}^nC_k p^k q^{n-k}\\
+    &= 1 - \sum_{k=0}^{10} {}^{35}C_k (0.1)^k (0.9)^{35-k}\\
+    &= 1 - \sum_{k=0}^{10} \frac{35!}{k!(35-k)!}  (0.1)^k (0.9)^{35-k}\\
+    &= 1 - \frac{4997878512022745871397452694244043}{5000000000000000000000000000000000}\\
+    &= \frac{2121487977254128602547305755957}{5000000000000000000000000000000000} \\
+    &\approx 0.0004242975954508257205094611511914\\
+    &\approx 0.0424\%
+\end{align*}

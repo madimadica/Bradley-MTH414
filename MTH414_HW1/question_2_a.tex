@@ -1,0 +1,10 @@
+$\partial_x f(u(x,y))$
+
+\soln* $f \circ u = \cos(x^2 y + 2x + y^3) + (x^2y + 2x + y^3)^2$. Then,
+\begin{align*}
+    \partial_x (f \circ u) &= \partial_x \pars{\cos(x^2 y + 2x + y^3) + (x^2y + 2x + y^3)^2} \\
+    &= \pdv{x} \pars{\cos(x^2 y + 2x + y^3)} + \pdv{x} \pars{(x^2y + 2x + y^3)^2}\\
+    &= \pars{-\sin(x^2 y + 2x + y^3) \cdot \pdv{x} \pars{x^2 y + 2x + y^3}} + \pars{2(x^2y + 2x + y^3) \cdot \pdv{x} \pars{x^2 y + 2x + y^3}}\\
+    &= \pdv{x} \pars{x^2 y + 2x + y^3} \pars{-\sin(x^2 y + 2x + y^3)+ 2(x^2y + 2x + y^3) }\\
+    &= 2(xy + 1) \pars{-\sin(x^2 y + 2x + y^3)+ 2(x^2y + 2x + y^3) }
+\end{align*}

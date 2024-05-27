@@ -1,0 +1,17 @@
+(the Laplacian)
+
+\nl Consider the function $f(x,y) = \log(x^2 + y^2)$. Show that $f_{xx} + f_{yy} = 0$ and determine the domain in $\R^2$ for which your calculation is valid 
+
+\soln*
+
+\begin{align*}
+    f_{x} &= 2x \Big/ \pars{\ln(10) \cdot (x^2 + y^2) } \\
+    f_{xx} &= \pdv{x}\Bigg( \underbrace{2x}_{f} \Big/ \underbrace{  \pars{\ln(10) \cdot (x^2 + y^2) }  }_{g}  \Bigg)
+    \\ &= \frac{f'g - fg'}{g^2} \\
+    &= \frac{ \pars{2\ln(10)(x^2 + y^2)} - \pars{4x^2 \ln(10)} }{\ln^2(10) (x^2 + y^2)^2  }\\
+    &= \frac{ 2(x^2 + y^2) - 4x^2 }{\ln(10) (x^2 + y^2)^2  }\\
+    &= \frac{-2x^2 + 2y^2}{\ln(10) (x^2+y^2)^2} \\
+    f_{yy} &= \frac{2x^2 - 2y^2}{\ln(10) (x^2+y^2)^2}
+\end{align*}
+$$f_{xx} + f_{yy} = \frac{(-2x^2 + 2y^2) + (2x^2 - 2y^2)}{\ln(10) (x^2+y^2)^2} = 0.$$
+Domain $D := \{(x,y) \mid (x,y) \neq (0,0)\}$

@@ -1,0 +1,11 @@
+$(f\ast g)(x) = (g \ast f)(x)$
+\begin{proof}
+    \begin{align*}
+        (f\ast g)(x) &= \intreal f(x-t) g(t) \dd t \\
+        & u=x-t, \quad t=x-u, \quad \dd t = - \dd u\\
+        &= -\int_{u(t=-\infty)}^{u(t=\infty)} f(u) g(x-u) \dd u\\
+        &= - \int_{\infty}^{-\infty} g(x-u) f(u) \dd u \\
+        &= \intreal g(x-u) f(u) \dd u \\
+        &= (g \ast f)(x)
+    \end{align*}
+\end{proof}

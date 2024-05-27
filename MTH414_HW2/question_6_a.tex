@@ -1,0 +1,5 @@
+Find the general solution to the PDE.
+
+\soln* $\pdv{y}{x} = \frac{y}{1} \iff \over{y}\dd{y} = \dd x \iff \ln \abs{y} = x + C \iff y = Ce^x \iff C = e^{-x}y$.
+
+\nl Then $\pdv{x} u(x, Ce^x) = u_x + Ce^x u_y = u_x + yu_y = 0$. Letting $x=0$ then $u(0,Ce^0) = u(0,C) = u(0, e^{-x}y)$. Thus $$u(x,y) = f(e^{-x}y)$$

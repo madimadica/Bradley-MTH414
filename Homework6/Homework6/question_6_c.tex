@@ -1,0 +1,13 @@
+
+Show that the positive eigenvalues and associated eigenfunctions of the problem are
+$\lambda_n = \beta_n^2/L^2$ and $y_n(x) = \sin \beta_n x/L (n \geq 1)$, where $\beta_n$ is the $n$th positive root of
+$\tan x = x/hL$
+
+\soln* 
+For positive eigenvalues, $D^2 + \lambda$ implies $y(x) = A \sinp{\rabsl x} + B \cosp{\rabsl x}$.
+At the boundary conditions, $y(0) = 0 \implies B = 0$, so $y(x) = A \sinp{\rabsl x}$
+
+\nl At the Robin BC, $hy(L) = y'(L)$ thus
+$$h \sinp{\rabsl L} = \rabsl \cosp{\rabsl L} \qiffq \frac{\rabsl}{h} = \tan \pars{\rabsl L}.$$
+Let $x := \rabsl L$, then $\rabsl = \dfrac{x}{L}$. Substituting into the above yields
+$$\tan(x) = \frac{x}{hL}$$

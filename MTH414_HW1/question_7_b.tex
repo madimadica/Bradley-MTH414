@@ -1,0 +1,18 @@
+Given any two solutions $y_1$ and $y_2$ and scalars $\alpha, \beta \in \R$, the function 
+$\alpha y_1 + \beta y_2$ is a solution of the ODE.
+
+\begin{proof}
+    Let $f := \alpha y_1 + \beta y_2$, then $f' = \alpha y_1' + \beta y_2'$ and $f'' = \alpha y_1'' + \beta y_2''$.
+    Substituting the proposed solution, $f$, into the differential equation gives
+    \begin{align*}
+        y'' + P(x)y' + Q(x)y &= (\alpha y_1'' + \beta y_2'') + P(x) (\alpha y_1' + \beta y_2') + Q(x) (\alpha y_1 + \beta y_2)\\
+        &= \alpha y_1'' + \beta y_2'' + P(x) \alpha y_1' + P(x)\beta y_2' + Q(x) \alpha y_1 + Q(x) \beta y_2\\
+        &= \pars{\alpha y_1'' + P(x) \alpha y_1' + Q(x) \alpha y_1} + \pars{
+            \beta y_2'' + P(x)\beta y_2' + Q(x) \beta y_2
+        }\\
+        &= \alpha \pars{ y_1'' + P(x)  y_1' + Q(x)  y_1} + \beta \pars{ y_2'' + P(x) y_2' + Q(x)  y_2}\\
+        &= 0\alpha + 0\beta \tag{by hypothesis}\\
+        &= 0.
+    \end{align*}
+    Hence $f := \alpha y_1 + \beta y_2$ is a also solution.
+\end{proof}

@@ -1,0 +1,3 @@
+Solve the equation $yu_x + xu_y = 0$ with the condition $u(0,y) = e^{-y^2}$.
+
+\soln* $\dv{y}{x} = \frac{b(x,y)}{a(x,y)} = \frac{x}{y} \iff \int y \dd{y} = \int x \dd{x} \iff \frac{y^2}{2} = \frac{x^2}{2}+C \implies C = y^2 - x^2$. Then $u(x,y) = f(C) = f(y^2 - x^2)$. Evaluated at $u(0,y)$ gives $f(y^2) = e^{-y^2}$. Let $w := y^2$ then $f(w) = e^{-w}$ so $u(x,y) = e^{-(y^2-x^2)} = e^{x^2-y^2}$.

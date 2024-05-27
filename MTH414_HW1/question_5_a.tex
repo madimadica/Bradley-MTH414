@@ -1,0 +1,13 @@
+Given any $\alpha \in \R$, solve the initial value problem
+$$y' = y^2 \cos (t),\; y(0) = \alpha.$$
+
+\soln* This is a separable equation.
+\begin{align*}
+    & y' = \dv{y}{t} = y^2 \cos(t)\\
+    \iff & \over{y^2} \dd{y} = \cos(t) \dd{t}\\
+    \iff & -\frac{1}{y} = \sin(t) + C\\
+    \iff & y(t) = \over{-\sin(t)+C}\\
+    \implies &y(0) = \over{C} = \alpha\\
+     \iff & C = \over{\alpha}
+\end{align*}
+Hence the general solution is $y = \dfrac{1}{\over{\alpha}-\sin(t)}$.

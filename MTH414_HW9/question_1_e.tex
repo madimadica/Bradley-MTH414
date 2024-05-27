@@ -1,0 +1,12 @@
+$\mcu(e^{-2 \pi i a x } f(x)) = \hat{f}(\gamma - a)$
+\begin{proof}
+    I changed the exponent sign, I believe it was wrong.
+    \begin{align*}
+        \hat{f}(\gamma - a) &= \hat{g}(\gamma)\\
+        &= \intreal g(t) e^{-2\pi i x t} \dd t \\
+        &= \intreal f(t-a)e^{-2\pi i x t} \dd t \\
+        &=  \intreal f(u)e^{-2\pi i x (u+a)} \dd u \tag{$u=t-a,\; t = u+a$} \\
+        &= e^{-2\pi i x a} \intreal f(u)e^{-2\pi i x u} \dd u \\
+        &= e^{-2\pi i x a} \hat{f}(x)
+    \end{align*}
+\end{proof}

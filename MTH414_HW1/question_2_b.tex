@@ -1,0 +1,16 @@
+$\nabla f(u(x,y))$
+
+\soln* $f \circ u = \cos(x^2 y + 2x + y^3) + (x^2y + 2x + y^3)^2$. Then,
+\begin{align*}
+    \nabla (f \circ u) &= \vvec{\partial_x (f \circ u)}{\partial_y (f \circ u)}\\
+    &= \vvec{
+        2(xy + 1) \pars{-\sin(x^2 y + 2x + y^3)+ 2(x^2y + 2x + y^3) }
+    } {
+        (3y^2 + x^2) \pars{-\sin(x^2 y + 2x + y^3)+ 2(x^2y + 2x + y^3) }
+    } \\
+    &=  \pars{-\sin(x^2 y + 2x + y^3)+ 2(x^2y + 2x + y^3) } \vvec{
+        2(xy + 1)
+    }{
+        (3y^2 + x^2)
+    }
+\end{align*}

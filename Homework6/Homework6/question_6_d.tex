@@ -1,0 +1,60 @@
+
+Suppose that $hL = 1$ and that $f(x)$ is piecewise smooth. Show that
+$$f(x) = c_0 x + \sumn{1} c_n \sinp{\frac{\beta_n x}{L}},$$
+where $\{\beta_b\}_1^{\infty}$ are the positive roots of $\tan x = x$, and 
+$$c_0 = \frac{3}{L^3} \intl x f(x) \dd x$$
+$$c_n = \frac{2\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \intl f(x) \sinp{\frac{\beta_n x}{L}}$$
+
+\soln* 
+From part (a), $hL = 1 \iff \lambda_0 = 0 \implies y = A + Bx$. This gives an infinite family of solutions
+$$y = c_0 y_0 + \sumn{1} (A_n + B_n x).$$ Using the initial conditions,
+\begin{align*}
+    y(0) &= 0 \\
+    &= 0 + \sumn{1} (A_n + B_n \cdot 0)\\
+    &= \sumn{1} A_n
+\end{align*}
+
+In order to have the same form as a sine series, $A_n = c_n \sinp{\npxl}$, thus
+$$y(x) = c_0 x + \sumn{1} c_n \sinp{\npxl}.$$
+
+Then $\displaystyle c_0 = \dfrac{\inner{f(x), x}}{\inner{x,x}}$.
+$$\inner{f(x), x} = \intl x f(x) \dd x \qquad \inner{x,x} = \intl x^2 \dd x = \frac{L^3}{3}$$
+Therefore $\displaystyle c_0 = \frac{3}{L^3} \intl x f(x) \dd x$.
+
+Next $\displaystyle c_n = \frac{
+    \inner{f(x), \sinp{\bnxl}}
+}{
+    \inner{\sinp{\bnxl}, \sinp{\bnxl}}
+} = \frac{
+    \intl f(x) \sinp{\bnxl} \dd x
+}{
+    \inner{\sinp{\bnxl}, \sinp{\bnxl}}
+}$.
+\newpage
+\begin{align*}
+    \inner{\sinp{\bnxl}, \sinp{\bnxl}} &= \intl \sin^2 \pars{\bnxl} \dd x\\
+    &= \over{2} \intl  1 - \cosp{2 \beta_n x / L} \dd x\tag{trig identity}\\
+    &= \over{2} \pars{
+        L - \brac{
+            \sinp{\frac{2 \beta_n x}{L}} \frac{L}{2 \beta_n}
+        }_0^L
+    }\\
+    &= \over{2} \pars{
+        L - \sinp{2 \beta_n} \frac{L}{2 \beta_n}
+    }\\
+    &=  \frac{L}{2 \beta_n} \pars{
+        \beta_n - \sinp{2 \beta_n} \frac{1}{2}
+    }\\
+    &= \frac{L}{2 \beta_n} \brac{
+        \beta_n -  \cosp{\beta_n}\sinp{\beta_n}
+    }\tag{trig identity} 
+\end{align*}
+
+Thus 
+$$c_n =\frac{
+   2 \beta_n 
+}{
+    L \pars{
+        \beta_n -  \cosp{\beta_n}\sinp{\beta_n}
+    }
+}\intl f(x) \sinp{\bnxl} \dd x $$

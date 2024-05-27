@@ -1,0 +1,39 @@
+To solve the second-order ODE in the spacial coordinate, we need to interpret
+the initial condition $u'(0,t) = u'(L,t) = 0$. Do so. Then find and solve the
+associated eigenvalue problem.
+
+\soln* $u'(0,t) = u'(L,t) = 0$ means via substitution that $X'(0) = X'(L) = 0$ and we can solve an eigenvalue problem $X''+\lambda X = 0$, hence $\mathcal{L} = D^2 - \lambda$.
+
+\nl \textbf{Case $\lambda = 0$:}
+
+Yields $D^2 = 0$ and thus $X(x) = A + Bx$ and $X' = B$. 
+
+\nl Substituting in boundary conditions, $X'(0) = B = 0$. Thus $X = A$, and since $X' = 0$ then $A$ is a free variable. $A = 1$ is a nice number so $X_0(x) = A = 1$ is an associated eigenfunction.
+
+\nnl \textbf{Case $\lambda < 0$:}
+
+Yields $D^2 - \abs{\lambda} = 0$ gives
+\begin{align*}
+    X(x) &= A\sin(\rabsl x) + B \cos(\rabsl x)\\
+    X'(x) &= \rabsl A \cos(\rabsl x) - \rabsl B \sin(\rabsl x)
+\end{align*}
+
+$X'(0) = 0 \iff \rabsl A \cos(\rabsl 0) = \rabsl B \sin(\rabsl 0) \implies \absl A = 0 \implies A = 0$
+$X'(L) = 0 \iff - \rabsl B \sin(\rabsl L) = 0 \implies \rabsl L = n \pi \implies \lambda_n = \pfrac*{\np}{L}^2 $
+
+Thus the associated eigenfunction is $X_n(x) = \cosp{\npxl}$.
+
+\nnl \textbf{Case $\lambda > 0$:}
+
+Yields $D^2 + \abs{\lambda} = 0$ giving 
+
+\begin{align*}
+    X(x) &= A \sinhp{\rabsl x} + B \coshp{\rabsl x}\\
+    X'(x) &= \rabsl A \coshp{\rabsl x} + \rabsl B \sinhp{\rabsl x}
+\end{align*}
+
+$X'(0) = 0 \iff \rabsl A \coshp{0} + 0 = \rabsl A \iff A = 0$
+$$X(x) = B \coshp{\rabsl x}$$
+$X'(L) = 0 \iff \rabsl B \sinhp{\rabsl L} = 0 \implies B = 0$
+
+Hence the trivial solution $X(x) = 0$

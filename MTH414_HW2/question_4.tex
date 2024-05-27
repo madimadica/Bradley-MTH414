@@ -1,0 +1,15 @@
+Solve $au_x + bu_y + cu = 0$. (Assume $a,b \in \R^*$)
+
+\soln* $au_x + bu_y = -cu$ then $f(K) = f(bx-ay)$. Hence $y = \dfrac{bx-k}{a}$ and $x = \dfrac{k+ay}{b}$.
+
+\nl For $v(x,C) = v(x,y(x))$, $v_x = u_x + \frac{b}{a}u_y$ by the multivariable chain rule. 
+
+\nl Then $av_x = au_x + bu_y = -cv$. Solving,
+\begin{align*}
+    \quad & av_x = -cv\\
+    \iff \quad&  v_x = -\frac{c}{a}v\\
+    \iff \quad&\pdv{v}{x} = -\frac{c}{a}v\\
+    \iff \quad& \over{v} \dd{v} = -\frac{c}{a}\dd{x}\\
+    \iff \quad&\ln \abs{v} = -\frac{c}{a}x + g(bx-ay)\\
+\iff \quad & v(x,y) = e^{-cx/a}G(bx-ay)
+\end{align*}

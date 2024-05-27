@@ -1,0 +1,9 @@
+$\displaystyle \dv{x} \pars{(f\ast g)(x)} = \pars{\dv{f}{x} \ast g}(x)$
+
+\begin{proof}
+    \begin{align*}
+        \dv{x} \pars{(f\ast g)(x)} &= \dv{x} \pars{\intreal f(x-t)g(t)\dd t} \\
+        &=  \intreal \dv{x}f(x-t)g(t)\dd t  \tag{since integrating wrt $t$, not $x$}\\
+        &=  \pars{\dv{f}{x} \ast g}(x)
+    \end{align*}
+\end{proof}

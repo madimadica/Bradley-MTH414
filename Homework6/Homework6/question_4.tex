@@ -1,0 +1,29 @@
+Solve the IBVP $
+\begin{cases}
+    5u_t(x,t) = u_{xx}(x,t) & \text{if } x \in (0, 10) \text{ and } t \in \R\\
+    u'(0,t) = u'(10,t) = 0 & \text{if } t \in [0,\infty)\\
+    u(x, 0) = f(x) = 4x& \text{if } x \in [0,10]
+\end{cases} $
+
+Note here that $u_t = ku_{xx}$ implies $k=\over{5}$.
+$$   a_0 = \over{10}\int_0^{10} 4x \dd x = \frac{1}{5} \brac{x^2}_{0}^{10} = 20 $$
+\begin{align*}
+    a_n &= \frac{4}{5} \int_0^{10} x  \cosp{\npxo{10}}\dd x\\
+    &= \frac{4}{5}
+        \brac{ \frac{10x}{n \pi} \sinp{\npxo{10}} + \frac{100}{n^2 \pi^2} \cosp{\npxo{10}}}_{x=0}^{x=10}
+        \tag{MW-1} \\
+    &= \frac{4}{5} \pars{
+        \pars{
+            0 + \frac{100}{n^2 \pi^2} \cosp{\np}
+        } - \pars{
+            0 + \frac{100}{n^2 \pi^2}
+        }
+    }\\
+    &= \frac{80}{n^2 \pi^2} (\cosp{\np} - 1)
+\end{align*}
+
+Therefore 
+$$u(x,t) = 20 + \sumn{1} \pars{
+    \frac{80}{n^2 \pi^2} (\cosp{\np} - 1) 
+    \exp{\pfrac{\np}{10}^2 \frac{t}{5} } \cosp{\npxo{10}}
+}$$

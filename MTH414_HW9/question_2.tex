@@ -1,0 +1,18 @@
+Find the Fourier Transform of the function $f(x) = xe^{-kx^2}$. 
+
+\soln* 
+
+\nnl In order to use the derivitive formulas, first want to compute $\mathcal{F}\pars{e^{-kx^2}}$.
+
+$$\mathcal{F}\pars{e^{-kx^2}} = \intreal e^{-kx^2}e^{-2\pi i t x}\dd x = \intreal e^{-(kx^2 + 2\pi i tx) \dd x}$$
+This has a quadratic in $x$, $\;kx^2 + 2\pi i tx$. Completing the square gives 
+$$kx^2 + 2\pi i tx + \pfrac{\pi i t}{\sqrt{k}}^2 - \pfrac{\pi i t}{\sqrt{k}}^2 = \pars{\sqrt{k}x + \pfrac{\pi i t}{\sqrt{k}}}^2 - \pfrac{\pi i t}{\sqrt{k}}^2$$
+
+Thus we have 
+$$ \intreal \exp{ -\brac{\pars{\sqrt{k}x + \pfrac{\pi i t}{\sqrt{k}}}^2 - \pfrac{\pi i t}{\sqrt{k}}^2}} \dd x = \exp{\pfrac{\pi i t}{\sqrt{k}}^2} \intreal \exp{-\pars{\sqrt{k}x + \pfrac{\pi i t}{\sqrt{k}}}^2}\dd x $$
+
+Letting $u = \sqrt{k}x + \pfrac{\pi i t}{\sqrt{k}}$ gives $\dfrac{1}{\sqrt{k}} \dd u = \dd x$ so 
+$$\mathcal{F}\pars{e^{-kx^2}} = \frac{1}{\sqrt{k}} \exp{\pfrac{\pi i t}{\sqrt{k}}^2} \intreal e^{-u^2} \dd u = \frac{1}{\sqrt{k}} \exp{ -\frac{\pi^2 t^2}{k}}  \sqrt{\pi} =  \frac{\sqrt{\pi}}{\sqrt{k}} e^{-\pi^2 t^2 / k}$$
+
+\nnl Next, $\int xe^{-kx^2} \dd x= \pfrac*{e^{-kx^2}}{-2k}$. It follows that 
+$$\mathcal{F}\pars{xe^{-kx^2}} = \mathcal{F}\pars{\dv{x}\pfrac{e^{-kx^2}}{-2k}} = 2\pi i t \mathcal{F}\pars{ \over{-2k}\pars{e^{-kx^2}}} =- \frac{\pi i t}{k} \mathcal{F}\pars{ e^{-kx^2}} = \frac{- \pi \sqrt{\pi} i t}{k\sqrt{k}} e^{-\pi^2 t^2 / k}$$

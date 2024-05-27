@@ -1,0 +1,13 @@
+(first-order linear) Let $y(t)$ and $r \in \R , r\neq 0$. Find the general solution to the ODE. 
+$$ry' + 2y = e^{t^2}$$ 
+
+\soln* We would like to have the form $y' + p(t)y = q(t)$. We can rewrite the equation as
+$$y' + \underbrace{\frac{2}{r}y}_{p(t)y} = \underbrace{\over{r}e^{t^2}}_{q(t)}$$
+Then $\mu(t) = \exp \pars{\int p(t) dt} = \exp \pars{\frac{2t}{r}}$. Next,
+\begin{align*}
+    y&=\over*{\mu(t)} \pars{\displaystyle \int \mu(t)q(t) \dd{t} +C} \\
+    &= \over*{\exp(2t/r)} \pars{ \displaystyle \int \exp(2t/r)\cdot\frac{\exp(e^{t^2})}{r} \dd{t} + C }
+    \\ &= \frac{ \over{r}\int \exp(\frac{2t}{r}+t^2)\dd{t} + C}{\exp(2t/r)}
+\end{align*}
+
+

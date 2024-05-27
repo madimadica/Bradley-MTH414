@@ -1,0 +1,11 @@
+$\int_{\R} \hat{f}(x)g(x) = \int_{\R}f(x)\hat{g}(x)$
+\begin{proof}
+    \begin{align*}
+        \intreal  \hat{f}(x)g(x) &= \intreal \pars{\intreal f(t) e^{-2\pi i x t}\dd t}g(x)\dd x\\
+        &= \intreal \pars{\intreal f(t) e^{-2\pi i x t}g(x)\dd t}\dd x\\
+        &\stackrel{\mathclap{\normalfont\mbox{Fubini}}}{=} \quad \intreal \pars{\intreal f(t) e^{-2\pi i x t}g(x)\dd x}\dd t\\
+        &= \intreal \pars{\intreal e^{-2\pi i x t}g(x)\dd x} f(t)\dd t\\
+        &= \intreal \hat{g}(t) f(t) \dd t\\
+        &= \intreal f(x)\hat{g}(x) \dd x
+    \end{align*}
+\end{proof}

@@ -1,0 +1,28 @@
+Suppose the $hL = 1$. Represent the function $f(x) = A$, $A$ a constant, as a series of
+eigenfunctions of the above Sturm-Liouville problem.
+
+\soln*
+
+\begin{align*}
+    c_0 &= \frac{3A}{L^3} \intl x \dd x \\
+    &= \frac{3A}{2L^3} \brac{x^2}_{0}^L\\
+    &= \frac{3A}{2L}
+\end{align*}
+
+\begin{align*}
+    c_n &=
+    \frac{2A\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \intl \sinp{\frac{\beta_n x}{L}}\\
+    &= \frac{2A\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \cdot \frac{L}{\beta_n} \brac{-
+        \cosp{\frac{\beta_n x}{L}}
+    }_0^L \\
+    &= \frac{2A\beta_n}{L(\beta_n - \cosp{\beta_n} \sinp{\beta_n})} \cdot \frac{L}{\beta_n} \pars{
+        1-\cosp{\beta_n}
+    } \\
+    &= \frac{2A}{\beta_n - \cosp{\beta_n} \sinp{\beta_n}} \pars{
+        1-\cosp{\beta_n}
+    } \\
+\end{align*}
+
+$$\widehat{f}(x) = \frac{3Ax}{2L} + \sumn{1} \frac{2A}{\beta_n - \cosp{\beta_n} \sinp{\beta_n}} \pars{
+    1-\cosp{\beta_n}
+} \sinp{\frac{\beta_n x}{L}} $$

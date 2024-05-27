@@ -1,0 +1,10 @@
+$\displaystyle - \dv{\gamma} \hat{f}(\gamma) = \mcu(2\pi i x f(x))$
+\begin{proof}
+    \begin{align*}
+        - \dv{\gamma} \hat{f}(\gamma) &=  - \dv{\gamma}  \pars{ \intreal f(\gamma) e^{-2 \pi i \gamma x} \dd \gamma}\\
+        &= \pars{ \intreal f(\gamma) - \dv{\gamma} e^{-2 \pi i \gamma x} \dd \gamma}\\
+        &= -\pars{ \intreal f(\gamma) -2 \pi ix e^{-2 \pi i \gamma x} \dd \gamma}\\
+        &=  2 \pi ix \pars{ \intreal f(\gamma) e^{-2 \pi i \gamma x}\dd \gamma}\\
+        &= \mcu(2\pi i x f(\gamma))
+    \end{align*}
+\end{proof}
